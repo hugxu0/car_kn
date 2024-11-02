@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>汽车系统动力学知识图谱</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .main-title {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1001;
+        }
+        .title-label {
+            position: absolute;
+            top: 60px;  /* 调整位置，让它在主标题下方 */
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-title">汽车系统动力学知识图谱</div>
+    <div class="title-label">第三章：充气轮胎动力学</div>
+    <div id="container">
+        <div class="control-panel">
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="搜索节点...">
+                    <i class="fas fa-search search-icon"></i>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+                <div class="search-stats" id="searchStats"></div>
+            </div>
+        </div>
+        <div id="graph"></div>
+        <div id="nodeInfo" class="node-info"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+</body>
+</html>
